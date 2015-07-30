@@ -22,6 +22,6 @@ app.service('qService', function(){
 
   	//takes in text of a quote, loops through array, then removes matching data
   	this.removeData = function(){
-
+      
   	}
 })
