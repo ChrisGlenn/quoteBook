@@ -16,12 +16,16 @@ app.service('qService', function(){
   	}
 
   	//takes in data object, verifies it has the proper keys and then adds it to the end of the quotes array...
-  	this.addData = function(arg){
-  		quotes.push(arg);
+  	this.addData = function(obj){
+  		quotes.push(obj);
   	}
 
   	//takes in text of a quote, loops through array, then removes matching data
-  	this.removeData = function(){
-      
+  	this.removeData = function(arg1, arg2){
+      for(var i=0; i<quotes.length; i++){
+        if(quotes[i].text === arg1 && quotes[i].author === arg2){
+          quotes.splice(i, 1);
+        }
+      }
   	}
 })

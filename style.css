@@ -34,3 +34,15 @@ li{
 	display: block;
 	margin: 30px auto;
 }
+
+#Bottom_Bar{
+	background-color: darkgray;
+	width: 100%;
+	height: 1px;
+}
+
+.Basic_Text{
+	display: inline-block;
+	font-family: Arial;
+	margin: 8px 10px;
+}

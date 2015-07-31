@@ -7,8 +7,8 @@
 
 		<h1>Quotebook</h1>
 
-		<input id="inputQuote" placeholder="Add quote..." ng-mode="quoteText"></input>
-		<input id="inputQuote" placeholder="Add author..." ng-mode="quoteAuthor"></input>
+		<input id="inputQuote" placeholder="{{quotePlaceholder}}" ng-model="quoteText"></input>
+		<input id="inputQuote" placeholder="{{authorPlaceholder}}" ng-model="quoteAuthor"></input>
 
 		<select class="Category">
 			<option>Inspirational</option>
@@ -16,13 +16,18 @@
 			<option>Philosophy</option>
 			<option>Technology</option>
 			<option>Business</option>
+			<option>Gaming</option>
 		</select>
 
 		<button class="Button" ng-click="addQuote()">Add Quote</button>
 
 		<ul>
-			<li ng-repeat="quote in quoteList.slice().reverse()"><button ng-click="removeQuote()">Remove</button>&nbsp;&nbsp;{{quote.text}}&nbsp;&nbsp;&nbsp;-{{quote.author}}</li>
+			<li ng-repeat="quote in quoteList.slice().reverse()"><button ng-click="removeQuote(quote.text, quote.author)">Remove</button>&nbsp;&nbsp;{{quote.text}}&nbsp;&nbsp;&nbsp;-{{quote.author}}</li>
 		</ul>
+
+		<div id="Bottom_Bar"></div>
+
+		<span class="Basic_Text">Filter by Category:&nbsp;</span>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
 		<script src="js/app.js"></script>
